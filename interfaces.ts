@@ -30,3 +30,23 @@ export interface ISocialMediaPost {
   views: number;
   shares: number;
 }
+
+export interface IUser {
+  first_name: string;
+  last_name?: string | null;
+  username?: string | null;
+  email: string;
+  password: string;
+  dob?: Date;
+  gender?: string;
+  profile_pic?: string;
+  cover_pic?: string;
+  bio?: string;
+  location?: string;
+  education?: string;
+  work_exp?: string;
+  relationship_status?: string;
+  interests?: string[];
+  hobbies?: string[];
+  friends_list?: IUser[];
+}

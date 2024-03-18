@@ -6,6 +6,8 @@ import mongoose from "mongoose";
 import { socialMediaPosts } from "./data/postsData";
 import Post from "./models/posts";
 import postRoutes from "./routes/posts";
+import signupRoutes from "./routes/signupRoutes";
+import loginRoutes from "./routes/loginRoutes";
 
 dotenv.config();
 
@@ -38,6 +40,10 @@ app.get("/", async (req: Request, res: Response) => {
 // remember to use app.use() method not get ot post
 // this below is the root path, we can form diverging paths/routes from here defined in routes folder
 app.use("/posts", postRoutes);
+
+app.use("/signup", signupRoutes);
+
+app.use("/login", loginRoutes);
 
 // function to connect to mongodb atlas db
 const main = async () => {
